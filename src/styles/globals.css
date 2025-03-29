@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans text-text bg-background;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-primary;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium transition-colors rounded-md shadow-medium;
+  }
+  
+  .btn-primary {
+    @apply text-white bg-accent hover:bg-accent-dark;
+  }
+  
+  .btn-outline {
+    @apply text-primary border-2 border-primary hover:bg-primary hover:text-white;
+  }
+  
+  .nav-link {
+    @apply inline-block py-2 font-medium transition-colors hover:text-accent;
+  }
+  
+  .card {
+    @apply bg-gradient-card p-6 rounded-lg shadow-card border-2 border-border;
+  }
+  
+  .section {
+    @apply py-12 md:py-20;
+  }
+  
+  .section-alt {
+    @apply bg-background-dark;
+  }
+  
+  .content-box {
+    @apply bg-white p-6 rounded-lg shadow-card border-2 border-border;
+  }
+  
+  .feature-box {
+    @apply bg-gradient-card p-6 rounded-lg shadow-card border-2 border-border 
+           transform transition-all duration-300 hover:scale-105 hover:shadow-medium;
+  }
+  
+  /* Floating animations */
+  .float {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  .float-delay {
+    animation: floating 3s ease-in-out 1s infinite;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+} 
